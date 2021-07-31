@@ -47,3 +47,12 @@ function countSmileys(arr) {
 
 console.log(countSmileys([':~)', ':~)', ':~D', ';~D', ';oD', ';~D', ';~>']))
 console.log(countSmileys([';D', ';)', ';-)', ';o)', ';~)', ':>', ':~(']))
+
+/*
+alternative solutions
+function countSmileys(arr) {
+  return arr.filter(x => /^[:;][-~]?[)D]$/.test(x)).length;
+}
+
+const countSmileys = ss => ss.reduce((a, s) => a + /^[:;][-~]?[D)]$/.test(s), 0);
+*/
