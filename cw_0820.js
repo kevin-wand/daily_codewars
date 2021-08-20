@@ -51,3 +51,29 @@ console.log(numberToPrice(-5))                  //'-5.00'
 console.log(numberToPrice(1000000.5))           //'1,000,000.50'
 console.log(numberToPrice('@'))                 //'NaN'
 
+
+/*
+alternate solutions
+
+var numberToPrice = function(n) {
+   return typeof n != 'number' ? 'NaN' : n.toFixed(3).replace(/\d$/, '').replace(/(\d)(?=(?:\d{3})+\.)/g, '$1,')
+}
+
+function numberToPrice(number) {
+  if (isNaN(number) || number === '') {
+    return NaN.toString();
+  }
+  let sign = (number < 0 ? '-' : '');
+  number = Math.abs(number).toFixed(3).slice(0, -1);
+  let chars = number.toString().split('');
+  for (let i = chars.length - 6; i > 0; i -= 3) {
+    chars.splice(i, 0, ',');
+  }
+  return sign + chars.join('');
+}
+
+var numberToPrice = function(number) {
+  return Number.isFinite(number) && `${number.toLocaleString().split('.')[0]}${number.toFixed(3).slice(-4, -1)}` || 'NaN'
+}
+
+*/
