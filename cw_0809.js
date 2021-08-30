@@ -34,29 +34,3 @@ function highestRank(arr){
 }
 
 */
-
-var maxSequence = function(arr){
-  let current = 0
-  let longest = []
-  for (let i = 0; i < arr.length; i++){
-    let newArr = newArr.push(arr[i])
-    let compare = []
-    compare = compare.reduce((a, b) => a + b, 0)
-    while (compare >= arr[i]) {
-      
-    }
-
-  }
-}
-
-console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
-// get an array length, compare against "current value"
-// make this "newArr"
-// if array reduced is less than array length, then add a new value to it
-// -2 < 0, stop iteration, go to next value
-// 1 > 0, add a value, -2 < 0, stop iteration
-//  -3 < 0
-//  4 > 0, add a value, 3 > 0, add a value 5 > 0, after each sequence push if the value was greater
-// next reduces, so stop and then try again
-// only push if value was greater
-// return the highest array
