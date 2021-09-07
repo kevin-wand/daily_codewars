@@ -96,3 +96,14 @@ C D F
 * * *\n
 C D F
 */
+
+/*
+alternate solution
+function verticalHistogramOf(s){
+  let cnt = [...s.replace(/[^A-Z]/g,'')].reduce((o,c)=>(o[c]=o[c]+1||1,o), {});
+  let k   = Object.keys(cnt).sort();
+  let n   = Math.max(...Object.values(cnt));
+  const buildLine = i => (i==n ? k : k.map(x=>cnt[x]>=n-i?'*':' ') ).join(' ').replace(/ +$/,'');
+  return Array.from( {length: n+1}, (_,i) => buildLine(i)).join('\n');
+}
+*/
